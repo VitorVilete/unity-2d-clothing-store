@@ -33,7 +33,7 @@ AnimationClip:
     - time: 5
       value: {fileID: 868211129, guid: 24749f2d1ef23d9469f54356385266c8, type: 3}
     attribute: m_Sprite
-    path: body
+    path: BodyRenderer
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -52,7 +52,7 @@ AnimationClip:
     - time: 5
       value: {fileID: 882325598, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     attribute: m_Sprite
-    path: clothes
+    path: ClothesRenderer
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -71,7 +71,7 @@ AnimationClip:
     - time: 5
       value: {fileID: -1784368115, guid: fb4fad273b138ac47a66d06c4ea75e76, type: 3}
     attribute: m_Sprite
-    path: hair
+    path: HairRenderer
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -83,7 +83,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3685223346
+      path: 2371895513
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -92,7 +92,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 813282444
+      path: 3716735741
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -101,7 +101,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2633457945
+      path: 1116378835
       attribute: 0
       script: {fileID: 0}
       typeID: 212

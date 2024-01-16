@@ -3,6 +3,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -16,17 +17,25 @@ public class PlayerAnimation : MonoBehaviour
     public AnimationClip walkUp;
     public AnimationClip walkRight;
     public AnimationClip walkLeft;
+    public Animator playerAnimator;
 
     private List<Sprite> bodyTextures;
     private List<Sprite> clothesTextures;
     private List<Sprite> hairTextures;
 
-    // Start is called before the first frame update
     void Start()
     {
         UpdateCharacterSprites();
     }
 
+
+    public void OnMovement(InputAction.CallbackContext value)
+    {
+        Vector2 movementInput = value.ReadValue<Vector2>();
+        playerAnimator.SetFloat("Horizontal", movementInput.x);
+        playerAnimator.SetFloat("Vertical", movementInput.y);
+        playerAnimator.SetBool("IsWalking", movementInput != Vector2.zero);
+    }
     //Frame Data
     //1 -> Idle
     //32 - 37 -> walk down
@@ -49,9 +58,9 @@ public class PlayerAnimation : MonoBehaviour
     private void RegisterSprites(AnimationClip animClip, int frameRate, int frameStart)
     {
         animClip.ClearCurves();
-        SetAnimationClip(animClip, frameRate, frameStart, "body", bodyTextures);
-        SetAnimationClip(animClip, frameRate, frameStart, "clothes", clothesTextures);
-        SetAnimationClip(animClip, frameRate, frameStart, "hair", hairTextures);
+        SetAnimationClip(animClip, frameRate, frameStart, "BodyRenderer", bodyTextures);
+        SetAnimationClip(animClip, frameRate, frameStart, "ClothesRenderer", clothesTextures);
+        SetAnimationClip(animClip, frameRate, frameStart, "HairRenderer", hairTextures);
     }
 
     private void SetAnimationClip(AnimationClip animClip, int frameRate, int frameStart, string path,List<Sprite> spriteSheet)
