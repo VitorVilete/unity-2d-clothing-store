@@ -40,17 +40,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1816047378, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: -705603769, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - time: 1
-      value: {fileID: -1843689120, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: 526314737, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - time: 2
-      value: {fileID: 1780535191, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: -1330191615, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - time: 3
-      value: {fileID: 528271296, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: -1158812105, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - time: 4
-      value: {fileID: -778977206, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: -1270102467, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - time: 5
-      value: {fileID: 1715434069, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+      value: {fileID: -1377574223, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     attribute: m_Sprite
     path: ClothesRenderer
     classID: 212
@@ -116,12 +116,12 @@ AnimationClip:
     - {fileID: 857199205, guid: 24749f2d1ef23d9469f54356385266c8, type: 3}
     - {fileID: -127545666, guid: 24749f2d1ef23d9469f54356385266c8, type: 3}
     - {fileID: 1458020062, guid: 24749f2d1ef23d9469f54356385266c8, type: 3}
-    - {fileID: 1816047378, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
-    - {fileID: -1843689120, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
-    - {fileID: 1780535191, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
-    - {fileID: 528271296, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
-    - {fileID: -778977206, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
-    - {fileID: 1715434069, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+    - {fileID: -705603769, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+    - {fileID: 526314737, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+    - {fileID: -1330191615, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+    - {fileID: -1158812105, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+    - {fileID: -1270102467, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+    - {fileID: -1377574223, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
     - {fileID: -1101223114, guid: 7d607746672a41e4da7a302c81782908, type: 3}
     - {fileID: 1438646396, guid: 7d607746672a41e4da7a302c81782908, type: 3}
     - {fileID: 1710263858, guid: 7d607746672a41e4da7a302c81782908, type: 3}

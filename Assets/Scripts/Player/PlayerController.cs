@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [Header("Dependencies")]
     public Rigidbody2D playerRb;
     public Body playerCharacterBody;
-    public Inventory playerCharacterInventory;
     public PlayerAnimation playerAnim;
 
     private Vector2 _movementInput;
@@ -37,10 +36,12 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
-            List<ItemSO> clothesInInventory = playerCharacterInventory.items.FindAll(s => s.itemType == "Clothes");
-            List<ItemSO> hairsInInventory = playerCharacterInventory.items.FindAll(s => s.itemType == "Hair");
-            playerCharacterBody.currentClothes = clothesInInventory[Random.Range(0, clothesInInventory.Count())]; ;
+            List<ItemSO> clothesInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Clothes");
+            List<ItemSO> hairsInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Hair");
+            playerCharacterBody.currentClothes = clothesInInventory[Random.Range(0, clothesInInventory.Count())];
+            Debug.Log("Choosen clothes: " + playerCharacterBody.currentClothes.itemName);
             playerCharacterBody.currentHair = hairsInInventory[Random.Range(0, hairsInInventory.Count())];
+            Debug.Log("Choosen hair: " + playerCharacterBody.currentHair.itemName);
             playerAnim.UpdateCharacterSprites();
             Debug.Log("Interact");
         }
