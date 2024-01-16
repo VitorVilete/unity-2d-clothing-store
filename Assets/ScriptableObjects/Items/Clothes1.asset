@@ -17,4 +17,4 @@ MonoBehaviour:
   itemType: Clothes
   itemPath: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/1out/char_a_p1_1out_fstr_v04.png
   value: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -1851407587, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}

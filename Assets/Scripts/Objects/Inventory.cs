@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour
 {
@@ -13,9 +14,24 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    public int space = 10;
+    public UnityEvent onItemChanged;
+
+    public int space = 9;
 
     public List<ItemSO> items;
+
+    public List<ItemSO> startingItems;
+
+    private void Start()
+    {
+        if (startingItems.Count > 0)
+        {
+            foreach (ItemSO item in startingItems)
+            {
+                Add(item);
+            }
+        }
+    }
 
     public bool Add(ItemSO item)
     {
@@ -25,6 +41,10 @@ public class Inventory : MonoBehaviour
             return false;
         }
         items.Add(item);
+        if(onItemChanged != null)
+        {
+            onItemChanged.Invoke();
+        }
         return true;
     }
 

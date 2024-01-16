@@ -36,14 +36,16 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
-            List<ItemSO> clothesInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Clothes");
-            List<ItemSO> hairsInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Hair");
-            playerCharacterBody.currentClothes = clothesInInventory[Random.Range(0, clothesInInventory.Count())];
-            Debug.Log("Choosen clothes: " + playerCharacterBody.currentClothes.itemName);
-            playerCharacterBody.currentHair = hairsInInventory[Random.Range(0, hairsInInventory.Count())];
-            Debug.Log("Choosen hair: " + playerCharacterBody.currentHair.itemName);
-            playerAnim.UpdateCharacterSprites();
-            Debug.Log("Interact");
+            //List<ItemSO> clothesInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Clothes");
+            //List<ItemSO> hairsInInventory = Inventory.instance.items.FindAll(s => s.itemType == "Hair");
+            //playerCharacterBody.currentClothes = clothesInInventory[Random.Range(0, clothesInInventory.Count())];
+            //Debug.Log("Choosen clothes: " + playerCharacterBody.currentClothes.itemName);
+            //playerCharacterBody.currentHair = hairsInInventory[Random.Range(0, hairsInInventory.Count())];
+            //Debug.Log("Choosen hair: " + playerCharacterBody.currentHair.itemName);
+            //playerAnim.UpdateCharacterSprites();
+            //Debug.Log("Interact");
+            Inventory.instance.Add(new ItemSO { itemName = "teste1", itemType = "Clothes", itemDescription = "ItemTestDesc"});
+            Debug.Log(Inventory.instance.items.Count);
         }
     }
 }
