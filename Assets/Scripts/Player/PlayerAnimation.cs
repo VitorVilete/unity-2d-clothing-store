@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerAnimation : MonoBehaviour
 {
     [Header("Dependencies")]
-    public CharacterSO playerCharacter;
+    public Body playerCharacterBody;
     public SpriteRenderer bodyRenderer;
     public SpriteRenderer clothesRenderer;
     public SpriteRenderer hairRenderer;
@@ -44,9 +44,9 @@ public class PlayerAnimation : MonoBehaviour
     //56 - 61 -> walk left
     public void UpdateCharacterSprites()
     {
-        bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacter.body.bodySpriteSheetName).OfType<Sprite>().ToList();
-        clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacter.body.currentClothes.itemPath).OfType<Sprite>().ToList();
-        hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacter.body.currentHair.itemPath).OfType<Sprite>().ToList();
+        bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.bodySpriteSheetName).OfType<Sprite>().ToList();
+        clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentClothes.itemPath).OfType<Sprite>().ToList();
+        hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentHair.itemPath).OfType<Sprite>().ToList();
 
         RegisterSprites(idle, 1, 0);
         RegisterSprites(walkDown, 6, 32);

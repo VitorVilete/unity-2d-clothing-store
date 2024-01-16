@@ -308,7 +308,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1424915067, guid: fb4fad273b138ac47a66d06c4ea75e76, type: 3}
+  m_Sprite: {fileID: 855732343, guid: 7d607746672a41e4da7a302c81782908, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -319,6 +319,97 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4648972961841966572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5520773203465315858}
+  - component: {fileID: 985916496210698880}
+  - component: {fileID: 5126527707960377353}
+  m_Layer: 0
+  m_Name: Interaction
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5520773203465315858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648972961841966572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8468044638304348719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985916496210698880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648972961841966572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c14521d2d169c741a96fe2009421cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableTag: Interactable
+--- !u!61 &5126527707960377353
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648972961841966572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0063710213, y: -0.012741804}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.000461, y: 3.0132027}
+  m_EdgeRadius: 0
 --- !u!1 &6235546401269245232
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +425,7 @@ GameObject:
   - component: {fileID: 549012103938540213}
   - component: {fileID: 8367272506741636735}
   - component: {fileID: 4870541364346254178}
+  - component: {fileID: 6188571480895417049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -358,6 +450,7 @@ Transform:
   - {fileID: 8333530525167004501}
   - {fileID: 7521010046653114235}
   - {fileID: 2397645913561984616}
+  - {fileID: 5520773203465315858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3391554548844912117
@@ -420,14 +513,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92202bfdfddf0e147851fe609b4d3b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCharacter: {fileID: 11400000, guid: e7046c0b0b50ae14cb97555ef96993da, type: 2}
+  playerCharacterBody: {fileID: 6188571480895417049}
   bodyRenderer: {fileID: 284836461987843359}
   clothesRenderer: {fileID: 8944220143065715368}
   hairRenderer: {fileID: 6352888332289108406}
+  idle: {fileID: 7400000, guid: 15e6ad8f1e22df545b4f4fdb2ad0cf7d, type: 2}
   walkDown: {fileID: 7400000, guid: 2b8bd7b5fd4779b47a98f512ca9c27ae, type: 2}
   walkUp: {fileID: 7400000, guid: 49d81230a2fce2d4eb9cc6aa2908b53c, type: 2}
   walkRight: {fileID: 7400000, guid: fcc588203731ea34b8d6876e086ad0b4, type: 2}
   walkLeft: {fileID: 7400000, guid: 83a2678238a18d6499ba74c7aa01f14c, type: 2}
+  playerAnimator: {fileID: 3391554548844912117}
 --- !u!114 &549012103938540213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,9 +537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   playerRb: {fileID: 4520514518167375106}
-  playerCharacter: {fileID: 11400000, guid: e7046c0b0b50ae14cb97555ef96993da, type: 2}
+  playerCharacterBody: {fileID: 6188571480895417049}
   playerAnim: {fileID: 8837974907869946304}
-  customTesteBody: {fileID: 11400000, guid: 2e9fde02361637f49acb7c38e957fdeb, type: 2}
 --- !u!114 &8367272506741636735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +568,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 549012103938540213}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMovement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8837974907869946304}
+        m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
         m_MethodName: OnMovement
         m_Mode: 0
         m_Arguments:
@@ -520,3 +626,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableTag: Interactable
+--- !u!114 &6188571480895417049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235546401269245232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe41a3c292d1f349a63ab67e400d911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentClothes: {fileID: 11400000, guid: 8373273477493a64ab90f86668857b7e, type: 2}
+  currentHair: {fileID: 11400000, guid: 4e67685607467fb41bc100685e386e71, type: 2}
+  bodySpriteSheetName: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/char_a_p1_0bas_humn_v01.png

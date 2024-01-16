@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: bob1_v01
   itemDescription: 
-  itemType: 
+  itemType: Hair
   itemPath: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/4har/char_a_p1_4har_bob1_v01.png
   value: 0
   sprite: {fileID: 0}

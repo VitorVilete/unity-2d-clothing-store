@@ -1,7 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Progress;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class PlayerController : MonoBehaviour
@@ -11,9 +13,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dependencies")]
     public Rigidbody2D playerRb;
-    public CharacterSO playerCharacter;
+    public Body playerCharacterBody;
+    public Inventory playerCharacterInventory;
     public PlayerAnimation playerAnim;
-    public BodySO customTesteBody;
 
     private Vector2 _movementInput;
 
@@ -35,7 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         if (value.performed)
         {
-            playerCharacter.body = customTesteBody;
+            List<ItemSO> clothesInInventory = playerCharacterInventory.items.FindAll(s => s.itemType == "Clothes");
+            List<ItemSO> hairsInInventory = playerCharacterInventory.items.FindAll(s => s.itemType == "Hair");
+            playerCharacterBody.currentClothes = clothesInInventory[Random.Range(0, clothesInInventory.Count())]; ;
+            playerCharacterBody.currentHair = hairsInInventory[Random.Range(0, hairsInInventory.Count())];
             playerAnim.UpdateCharacterSprites();
             Debug.Log("Interact");
         }

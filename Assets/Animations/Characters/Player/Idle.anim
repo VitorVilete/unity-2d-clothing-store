@@ -30,7 +30,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 100063994, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
+      value: {fileID: -1851407587, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
     attribute: m_Sprite
     path: ClothesRenderer
     classID: 212
@@ -39,7 +39,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1424915067, guid: fb4fad273b138ac47a66d06c4ea75e76, type: 3}
+      value: {fileID: 855732343, guid: 7d607746672a41e4da7a302c81782908, type: 3}
     attribute: m_Sprite
     path: HairRenderer
     classID: 212
@@ -81,8 +81,8 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -1044791275, guid: 24749f2d1ef23d9469f54356385266c8, type: 3}
-    - {fileID: 100063994, guid: 3539618f71e4ffc4e97dd620ee035304, type: 3}
-    - {fileID: -1424915067, guid: fb4fad273b138ac47a66d06c4ea75e76, type: 3}
+    - {fileID: -1851407587, guid: ca73485b478e0f94f9ab205c903a41f8, type: 3}
+    - {fileID: 855732343, guid: 7d607746672a41e4da7a302c81782908, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
