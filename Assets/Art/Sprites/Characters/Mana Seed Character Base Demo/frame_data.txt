@@ -1,0 +1,6 @@
+32 - 37 -> walk down
+40 - 45 -> walk up
+48 - 53 -> walk right
+56 - 61 -> walk left
+
+All the spritesheets have the same order

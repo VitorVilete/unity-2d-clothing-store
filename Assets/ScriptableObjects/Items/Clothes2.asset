@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb109ca5d31d646418fce482553337d0, type: 3}
   m_Name: Clothes2
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: out_pfpn_v04
   itemDescription: 
-  itemType: 
+  itemType: Clothes
+  itemPath: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/1out/char_a_p1_1out_pfpn_v04.png
   value: 0
   sprite: {fileID: 0}

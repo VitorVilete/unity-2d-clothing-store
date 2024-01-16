@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb109ca5d31d646418fce482553337d0, type: 3}
   m_Name: Hair1
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: bob1_v01
   itemDescription: 
   itemType: 
+  itemPath: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/4har/char_a_p1_4har_bob1_v01.png
   value: 0
   sprite: {fileID: 0}
