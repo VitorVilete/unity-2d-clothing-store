@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Dependencies")]
     public Rigidbody2D playerRb;
+    public CharacterSO playerCharacter;
 
     private Vector2 _movementInput;
 
