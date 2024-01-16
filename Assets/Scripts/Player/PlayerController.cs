@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [Header("Dependencies")]
     public Rigidbody2D playerRb;
     public CharacterSO playerCharacter;
+    public PlayerAnimation playerAnim;
+    public BodySO customTesteBody;
 
     private Vector2 _movementInput;
 
@@ -30,6 +33,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext value)
     {
-        Debug.Log("Interact");
+        if (value.performed)
+        {
+            playerCharacter.body = customTesteBody;
+            playerAnim.UpdateCharacterSprites();
+            Debug.Log("Interact");
+        }
     }
 }

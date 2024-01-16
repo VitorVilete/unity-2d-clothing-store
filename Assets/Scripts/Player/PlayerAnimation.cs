@@ -10,7 +10,8 @@ public class PlayerAnimation : MonoBehaviour
     public CharacterSO playerCharacter;
     public SpriteRenderer bodyRenderer;
     public SpriteRenderer clothesRenderer;
-    public SpriteRenderer hairRenderer; 
+    public SpriteRenderer hairRenderer;
+    public AnimationClip idle;
     public AnimationClip walkDown;
     public AnimationClip walkUp;
     public AnimationClip walkRight;
@@ -27,6 +28,7 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     //Frame Data
+    //1 -> Idle
     //32 - 37 -> walk down
     //40 - 45 -> walk up
     //48 - 53 -> walk right
@@ -37,6 +39,7 @@ public class PlayerAnimation : MonoBehaviour
         clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacter.body.currentClothes.itemPath).OfType<Sprite>().ToList();
         hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacter.body.currentHair.itemPath).OfType<Sprite>().ToList();
 
+        RegisterSprites(idle, 1, 0);
         RegisterSprites(walkDown, 6, 32);
         RegisterSprites(walkUp, 6, 40);
         RegisterSprites(walkRight, 6, 48);
@@ -45,10 +48,10 @@ public class PlayerAnimation : MonoBehaviour
 
     private void RegisterSprites(AnimationClip animClip, int frameRate, int frameStart)
     {
+        animClip.ClearCurves();
         SetAnimationClip(animClip, frameRate, frameStart, "body", bodyTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "clothes", clothesTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "hair", hairTextures);
-
     }
 
     private void SetAnimationClip(AnimationClip animClip, int frameRate, int frameStart, string path,List<Sprite> spriteSheet)
@@ -58,7 +61,7 @@ public class PlayerAnimation : MonoBehaviour
         spriteBinding.path = path;
         spriteBinding.propertyName = "m_Sprite";
 
-        ObjectReferenceKeyframe[] spriteKeyFrames = new ObjectReferenceKeyframe[6];
+        ObjectReferenceKeyframe[] spriteKeyFrames = new ObjectReferenceKeyframe[frameRate];
         animClip.frameRate = frameRate;
         for (int i = 0; i < spriteKeyFrames.Length; i++)
         {
