@@ -1802,6 +1802,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6822004841961345023, guid: 2a3c96944eb5218448f5d307f201f227, type: 3}
   m_PrefabInstance: {fileID: 1791286109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1839051342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8837974907869946304, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
+  m_PrefabInstance: {fileID: 4761003181716878480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92202bfdfddf0e147851fe609b4d3b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1843540437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2308,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1073020158}
     m_Modifications:
+    - target: {fileID: 487397457924637054, guid: 2a3c96944eb5218448f5d307f201f227, type: 3}
+      propertyPath: onItemEquipped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1839051342}
     - target: {fileID: 919927167656136351, guid: 2a3c96944eb5218448f5d307f201f227, type: 3}
       propertyPath: m_Name
       value: InventorySlot

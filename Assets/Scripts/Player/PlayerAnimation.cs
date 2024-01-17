@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Progress;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -36,6 +37,34 @@ public class PlayerAnimation : MonoBehaviour
         playerAnimator.SetFloat("Vertical", movementInput.y);
         playerAnimator.SetBool("IsWalking", movementInput != Vector2.zero);
     }
+
+    public void UpdateCharacterSprites(ItemSO item)
+    {
+        bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.bodySpriteSheetName).OfType<Sprite>().ToList();
+        clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentClothes.itemPath).OfType<Sprite>().ToList();
+        hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentHair.itemPath).OfType<Sprite>().ToList();
+        Debug.Log("item to be equiped:" + item);
+        if (item.itemType == "Clothes")
+        {
+            clothesTextures = AssetDatabase.LoadAllAssetsAtPath(item.itemPath).OfType<Sprite>().ToList();
+        }
+        else if (item.itemType == "Hair")
+        {
+            hairTextures = AssetDatabase.LoadAllAssetsAtPath(item.itemPath).OfType<Sprite>().ToList();
+        }
+        else
+        {
+            return;
+        }
+
+        RegisterSprites(idle, 1, 0);
+        RegisterSprites(walkDown, 6, 32);
+        RegisterSprites(walkUp, 6, 40);
+        RegisterSprites(walkRight, 6, 48);
+        RegisterSprites(walkLeft, 6, 56);
+    }
+
+
     //Frame Data
     //1 -> Idle
     //32 - 37 -> walk down
@@ -57,7 +86,6 @@ public class PlayerAnimation : MonoBehaviour
 
     private void RegisterSprites(AnimationClip animClip, int frameRate, int frameStart)
     {
-        animClip.ClearCurves();
         SetAnimationClip(animClip, frameRate, frameStart, "BodyRenderer", bodyTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "ClothesRenderer", clothesTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "HairRenderer", hairTextures);

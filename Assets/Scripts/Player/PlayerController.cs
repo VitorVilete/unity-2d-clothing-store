@@ -1,10 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Progress;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,7 +37,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Choosen clothes: " + playerCharacterBody.currentClothes.itemName);
             //playerCharacterBody.currentHair = hairsInInventory[Random.Range(0, hairsInInventory.Count())];
             //Debug.Log("Choosen hair: " + playerCharacterBody.currentHair.itemName);
-            //playerAnim.UpdateCharacterSprites();
+            playerAnim.UpdateCharacterSprites();
             //Debug.Log("Interact");
             Inventory.instance.Add(new ItemSO { itemName = "teste1", itemType = "Clothes", itemDescription = "ItemTestDesc"});
             Debug.Log(Inventory.instance.items.Count);
