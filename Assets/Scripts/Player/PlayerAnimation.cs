@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -19,16 +20,12 @@ public class PlayerAnimation : MonoBehaviour
     public AnimationClip walkRight;
     public AnimationClip walkLeft;
     public Animator playerAnimator;
-
-    private List<Sprite> bodyTextures;
-    private List<Sprite> clothesTextures;
-    private List<Sprite> hairTextures;
+    Func<Sprite, int> spriteOrderer = s => int.Parse(s.name.Split('_').Last());
 
     void Start()
     {
         UpdateCharacterSprites();
     }
-
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -40,28 +37,20 @@ public class PlayerAnimation : MonoBehaviour
 
     public void UpdateCharacterSprites(ItemSO item)
     {
-        bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.bodySpriteSheetName).OfType<Sprite>().ToList();
-        clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentClothes.itemPath).OfType<Sprite>().ToList();
-        hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentHair.itemPath).OfType<Sprite>().ToList();
         Debug.Log("item to be equiped:" + item);
         if (item.itemType == "Clothes")
         {
-            clothesTextures = AssetDatabase.LoadAllAssetsAtPath(item.itemPath).OfType<Sprite>().ToList();
+            playerCharacterBody.currentClothesSheetName = item.itemPath;
         }
         else if (item.itemType == "Hair")
         {
-            hairTextures = AssetDatabase.LoadAllAssetsAtPath(item.itemPath).OfType<Sprite>().ToList();
+            playerCharacterBody.currentHairSheetName = item.itemPath;
         }
         else
         {
             return;
         }
-
-        RegisterSprites(idle, 1, 0);
-        RegisterSprites(walkDown, 6, 32);
-        RegisterSprites(walkUp, 6, 40);
-        RegisterSprites(walkRight, 6, 48);
-        RegisterSprites(walkLeft, 6, 56);
+        UpdateCharacterSprites();
     }
 
 
@@ -73,25 +62,26 @@ public class PlayerAnimation : MonoBehaviour
     //56 - 61 -> walk left
     public void UpdateCharacterSprites()
     {
-        bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.bodySpriteSheetName).OfType<Sprite>().ToList();
-        clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentClothes.itemPath).OfType<Sprite>().ToList();
-        hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentHair.itemPath).OfType<Sprite>().ToList();
+        List<Sprite> bodyTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.bodySpriteSheetName).OfType<Sprite>().OrderBy(spriteOrderer).ToList();
+        List<Sprite> clothesTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentClothesSheetName).OfType<Sprite>().OrderBy(spriteOrderer).ToList();
+        List<Sprite> hairTextures = AssetDatabase.LoadAllAssetsAtPath(playerCharacterBody.currentHairSheetName).OfType<Sprite>().OrderBy(spriteOrderer).ToList();
 
-        RegisterSprites(idle, 1, 0);
-        RegisterSprites(walkDown, 6, 32);
-        RegisterSprites(walkUp, 6, 40);
-        RegisterSprites(walkRight, 6, 48);
-        RegisterSprites(walkLeft, 6, 56);
+        RegisterSprites(idle, 1, 0, bodyTextures, clothesTextures, hairTextures);
+        RegisterSprites(walkDown, 6, 32, bodyTextures, clothesTextures, hairTextures);
+        RegisterSprites(walkUp, 6, 40, bodyTextures, clothesTextures, hairTextures);
+        RegisterSprites(walkRight, 6, 48, bodyTextures, clothesTextures, hairTextures);
+        RegisterSprites(walkLeft, 6, 56, bodyTextures, clothesTextures, hairTextures);
     }
 
-    private void RegisterSprites(AnimationClip animClip, int frameRate, int frameStart)
+    private void RegisterSprites(AnimationClip animClip, int frameRate, int frameStart, List<Sprite> bodyTextures, List<Sprite> clothesTextures, List<Sprite> hairTextures)
     {
+        animClip.ClearCurves();
         SetAnimationClip(animClip, frameRate, frameStart, "BodyRenderer", bodyTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "ClothesRenderer", clothesTextures);
         SetAnimationClip(animClip, frameRate, frameStart, "HairRenderer", hairTextures);
     }
 
-    private void SetAnimationClip(AnimationClip animClip, int frameRate, int frameStart, string path,List<Sprite> spriteSheet)
+    private void SetAnimationClip(AnimationClip animClip, int frameRate, int frameStart, string path, List<Sprite> spriteSheet)
     {
         EditorCurveBinding spriteBinding = new EditorCurveBinding();
         spriteBinding.type = typeof(SpriteRenderer);
@@ -108,4 +98,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         AnimationUtility.SetObjectReferenceCurve(animClip, spriteBinding, spriteKeyFrames);
     }
+
+    
+    
 }

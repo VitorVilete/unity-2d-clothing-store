@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 32, y: 32}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 2, y: 3}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1079921736
@@ -2207,54 +2207,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 549012103938540213, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: playerCharacterInventory
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6235546401269245232, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: 71da8643-38a1-49f5-808c-27ae9cd4435d
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: PlayerControls/Inventory[/Keyboard/tab]
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 831734065}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnInventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367272506741636735, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8468044638304348719, guid: c7af52233563baf4e8816028fa4d2e33, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
