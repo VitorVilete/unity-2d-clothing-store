@@ -17,4 +17,4 @@ MonoBehaviour:
   itemType: Hair
   itemPath: Assets/Art/Sprites/Characters/Mana Seed Character Base Demo/char_a_p1/4har/char_a_p1_4har_dap1_v01.png
   value: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: -1424915067, guid: fb4fad273b138ac47a66d06c4ea75e76, type: 3}
